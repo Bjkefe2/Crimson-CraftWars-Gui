@@ -33,6 +33,7 @@ KillAll.Text = "Kill All"
 KillAll.TextColor3 = Color3.fromRGB(255, 255, 255)
 KillAll.TextSize = 14.000
 KillAll.MouseButton1Down:Connect(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
 	for i,v in pairs(game:GetDescendants()) do
 		if v.Name == game.Players.LocalPlayer.Name and v:FindFirstChild("Humanoid") then
 			v:FindFirstChild("Humanoid").Name = "A"
@@ -42,6 +43,7 @@ KillAll.MouseButton1Down:Connect(function()
 			end
 		end
 	end
+	end)
 end)
 
 AntiKickBypass.Name = "Anti Kick Bypass"
